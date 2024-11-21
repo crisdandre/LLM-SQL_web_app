@@ -1,1 +1,1 @@
-# LLM-SQL_web_app
+# LLM (Llama 3.2) integration with MySQL database and database administration
