@@ -1,4 +1,4 @@
-# LLM (Llama 3.2) integration with MySQL database, and database administration via web
+# LLM (Llama 3.2) integration with MySQL and database administration via a web applicaton
 
 For this project, I wanted to combine the advantages of an open-source LLM, such as Llama (from Meta) and classic SQL databases. So, I decided to implement it by setting up a project to get data from MySQL, pass it to Llama 3.2, and receive the relevant response per the prompt indications.
 
