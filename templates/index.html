@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas con Llama</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Left section for Llama interaction -->
+        <div class="left-section">
+            <h2>Interacción con Llama 3.2</h2>
+            <div class="chatbox" id="chatbox">
+                <!-- Responses from Llama will be displayed here -->
+            </div>
+            <div class="input-group">
+                <label for="recipe_id">Analizar receta en BD por ID:</label>
+                <input type="number" id="recipe_id" placeholder="Ingresa el ID de la receta">
+                <button onclick="analyzeRecipe()">Analizar</button>
+            </div>
+            <div class="input-group">
+                <label>Analizar rango de recetas en BD por ID:</label>
+                <input type="number" id="range_start" placeholder="Desde ID">
+                <input type="number" id="range_end" placeholder="Hasta ID">
+                <button onclick="analyzeRange()">Analizar Rango</button>
+            </div>
+            <div class="input-group">
+                <label for="custom_message">Analizar receta ingresando texto:</label>
+                <textarea id="custom_message" placeholder="Escribe aquí la receta que quieres que revise..."></textarea>
+                <button onclick="customAnalyze()">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Right section for managing the recipes database -->
+        <div class="right-section">
+            <h2>Administrar Base de Datos de Recetas</h2>
+            <div class="input-group">
+                <label for="search_recipe_id">Buscar por ID:</label>
+                <input type="number" id="search_recipe_id" placeholder="Ingresa el ID de la receta">
+                <button onclick="searchRecipe()">Buscar</button>
+            </div>
+            <div class="input-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" placeholder="Título de la receta">
+            </div>
+            <div class="input-group">
+                <label for="ingredients">Ingredientes:</label>
+                <textarea id="ingredients" placeholder="Lista de ingredientes"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="steps">Pasos:</label>
+                <textarea id="steps" placeholder="Descripción de los pasos"></textarea>
+            </div>
+            <!-- Added space between buttons -->
+            <div class="button-group">
+                <button class="update-btn" onclick="updateRecipe()">Actualizar Receta</button>
+                <button class="delete-btn" onclick="deleteRecipe()">Eliminar Receta</button>
+            </div>
+            <!-- Space before new section -->
+            <h3 class="section-title">Agregar Nueva Receta</h3>
+            <div class="input-group">
+                <label for="new_title">Título:</label>
+                <input type="text" id="new_title" placeholder="Título/Nombre de la Receta">
+            </div>
+            <div class="input-group">
+                <label for="new_ingredients">Ingredientes:</label>
+                <textarea id="new_ingredients" placeholder="Ingredientes"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="new_steps">Pasos:</label>
+                <textarea id="new_steps" placeholder="Pasos"></textarea>
+            </div>
+            <button class="add-btn" onclick="addRecipe()">Agregar Receta</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

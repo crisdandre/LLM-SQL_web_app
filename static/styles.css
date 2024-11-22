@@ -1,0 +1,158 @@
+/* General Layout and Styling */
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 170vh;
+    padding: 20px;
+}
+
+/* Left Section - Llama Interaction */
+.left-section, .right-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 49%;  /* Split screen in half */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.left-section {
+    background-color: #ffffff;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+h3.section-title {
+    margin-top: 30px; /* Added space between delete button and next section */
+}
+
+/* Input and button styles */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+}
+
+.input-group button {
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.input-group button:hover {
+    background-color: #004494;
+}
+
+/* Buttons with specific colors */
+.update-btn, .delete-btn, .add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Buttons with specific colors */
+.update-btn {
+    background-color: #28a745;
+}
+
+.update-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Add a bit more space between the update and delete buttons */
+.button-group {
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    margin-right: 15px;
+}
+
+.add-btn {
+    background-color: #0056b3;
+}
+
+.add-btn:hover {
+    background-color: #004494;
+}
+
+/* Chatbox for Llama Responses */
+.chatbox {
+    height: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fafafa;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
